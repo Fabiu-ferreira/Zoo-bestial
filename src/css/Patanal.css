@@ -1,0 +1,168 @@
+body {
+    margin: 0;
+    /* 2. Impede que a rolagem horizontal (eixo X) aconteça no nível principal */
+    overflow-x: hidden; 
+    
+    font-family: 'Lora', serif; /* fonte principal do texto */
+    background-color: blanchedalmond;
+
+    background-image: url('/imagens-zoo/Pegada-de-leao.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment:fixed /* opcional: dá leve efeito parallax */
+   
+}
+
+
+.Titulo{
+    background-color:#61c0bf ;
+    /* GARANTE A LARGURA TOTAL (COBRE DA ESQUERDA À DIREITA) */
+    display: block; 
+    width: 100%; 
+    
+    font-family: 'Rye', cursive; 
+    font-weight: 400;
+    color: #fff; /* Cor do texto */
+    padding: 5px 20px; /* Padding vertical e horizontal para dar 'ar' */
+    font-size: 1.2rem; /* Tamanho da fonte grande */
+    text-align: center; /* Centraliza o texto dentro da largura total */
+    margin: 0; 
+
+    
+}
+
+
+
+.folhas-container {
+  display: flex;
+  flex-wrap: wrap; /* permite quebrar linha */
+  justify-content: space-between; /* mantém a esquerda e direita */
+  align-items: flex-start;
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  gap: 40px; /* espaçamento entre as folhas */
+}
+
+/* Cada folha */
+.folha {
+  background-color:#61c0bf;
+  width: 45%; /* duas por linha */
+  max-width: 700px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  padding: 50px 60px;
+  font-family: 'Merienda', cursive;
+  color: #333;
+  line-height: 1.6;
+  border-radius: 20px;
+  overflow-y: auto;
+}
+
+/* Garante que folhas ímpares fiquem à esquerda e pares à direita */
+.folha:nth-child(odd) {
+  margin-left: 0;
+}
+.folha:nth-child(even) {
+  margin-left: auto; /* joga pra direita */
+}
+
+/* Títulos */
+.Titulo-onca-pintada,
+.Titulo-arara-azul,
+.Titulo-ariranha,
+.Titulo-sucuri,
+.Titulo-tuiuiu{
+  font-family: 'Rye', cursive;
+  font-weight: 400;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+
+  
+}
+
+/* Imagens dentro das folhas */
+.folha img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  margin-bottom: 20px;
+
+  
+}
+
+/* Textos */
+.informacoes {
+  font-size: 1.05rem;
+  text-align: justify;
+}
+
+/* para telas menores que 768( tablets e celulares) */
+@media (max-width: 768px) {
+    /* 1. Trava absoluta contra balanço lateral */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        /* Garante que o toque não cause deslocamentos estranhos */
+        touch-action: pan-y; 
+    }
+
+    /* 2. Ajuste do Container de Folhas */
+    .folhas-container {
+        display: flex;
+        flex-direction: column; /* Uma folha embaixo da outra */
+        width: 100%;
+        padding: 15px; /* Espaço nas bordas para não sufocar o texto */
+        gap: 20px;
+        box-sizing: border-box;
+    }
+
+    /* 3. Ajuste das Folhas (Cards) para leitura */
+    .folha {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important; /* Remove qualquer empurrão lateral (importante!) */
+        padding: 25px 20px;   /* Espaço interno confortável para ler */
+        box-sizing: border-box;
+        border-radius: 15px;
+        /* Altura automática para o texto não sumir nem ficar gigante */
+        height: auto !important; 
+        overflow-y: visible !important; 
+    }
+
+    /* 4. Tipografia (Aqui resolvemos a leitura) */
+    .Titulo-onca-pintada,
+    .Titulo-arara-azul,
+    .Titulo-ariranha,
+    .Titulo-sucuri,
+    .Titulo-tuiuiu{
+        font-size: 1.4rem !important; /* Tamanho nítido, mas não exagerado */
+        line-height: 1.2;
+        word-wrap: break-word;
+    }
+
+    .informacoes {
+        font-size: 1rem !important; /* Tamanho padrão de leitura mobile (16px) */
+        line-height: 1.5;           /* Espaçamento entre linhas para não cansar o olho */
+        text-align: left;           /* Às vezes o justify no mobile cria buracos brancos */
+    }
+
+    /* 5. Imagens */
+    .folha img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    /* 6. Banner de Título Superior */
+    .Titulo {
+        font-size: 1rem !important;
+        padding: 15px 10px !important;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}

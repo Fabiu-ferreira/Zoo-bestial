@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    overflow-x: hidden; 
+    background-color: rgb(235, 228, 228);
+   
+}
+
+/* 1. CORREÇÃO: Adicione flex-wrap: wrap; ao contêiner principal */
+.Galeria-Biomas {
+    display: flex;
+    /* >>> CHAVE: Permite que os itens que não cabem quebrem para a linha de baixo */
+    flex-wrap: wrap; 
+    
+    width: 100%; 
+    gap: 0; 
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Unifique os estilos de largura para todos os biomas (50%) */
+.Bioma-savana,
+.Bioma-pantanal,
+.Bioma-deserto,
+.Bioma-floresta-temperada,
+.Bioma-floresta-tropical,
+.Bioma-montanha,
+.Bioma-taiga,
+.Bioma-tundra{ /* Adicionei o deserto aqui */
+    width: 50%;
+    flex-basis: 50%; 
+    flex-shrink: 0;
+}
+
+/* 3. CORREÇÃO: Unifique e corrija os seletores de imagem */
+.Bioma-savana img,
+.Bioma-pantanal img,
+.Bioma-deserto img,
+.Bioma-floresta-temperada img,
+.Bioma-floresta-tropical img,
+.Bioma-montanha img,
+.Bioma-taiga img,
+.Bioma-tundra img{ /* CORRIGIDO: de 'image' para 'img' */
+    display: block; 
+    width: 100%; 
+    
+    /* Define uma altura consistente para as três imagens */
+    height: 300px; 
+    
+    object-fit: cover; 
+}

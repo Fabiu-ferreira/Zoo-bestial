@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Lora', serif;
+  background-color: #dcdcdc;
+}
+
+/* ===== LOGO NO TOPO ===== */
+.logo-banner {
+    background-color: white;
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.logo-banner img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+}
+
+
+
+
+/* ===== MAPA (PC padrão) ===== */
+html, body { 
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.mapa {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapa_zoo img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Celulares e tablets */
+@media (max-width: 1024px) {
+  
+    .logo-banner {
+  background-color: white;
+  width: 100%;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+.logo-banner img {
+  width: 100%;
+  height: 150px;
+  object-fit: contain;
+  display: block;
+}
+ 
+/* Posição do mapa */
+.mapa { 
+    width: 100%;            /* ocupa toda a largura disponível do contêiner/página */
+    height: auto;           /* a altura se ajusta automaticamente ao conteúdo (imagem) */
+    overflow: auto;         /* permite rolagem horizontal e vertical se o conteúdo for maior que o contêiner */
+
+    display: block;         /* remove qualquer comportamento de flex ou inline, o contêiner se comporta como bloco */
+}
+
+.mapa_zoo {
+    width: 1500px;          /* define a largura “real” do contêiner da imagem, maior que a tela para possibilitar rolagem horizontal */
+    height: auto;           /* a altura se ajusta proporcionalmente ao conteúdo da imagem */
+}
+
+
+}
+

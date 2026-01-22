@@ -1,0 +1,115 @@
+.agendamento {
+    width: 90%; /* Melhor para mobile */
+    max-width: 600px; /* Limite para desktop */
+    border-radius: 15px;
+    background-color: #f9f9f9; /* Fundo claro para contrastar com a logo */
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 5px solid #2D5A27; /* Verde da Logo */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin: 20px auto;
+}
+
+.agendamento h2 {
+    font-family: 'Rye', sans-serif; /* Ou a fonte que você usa no site */
+    font-size: 2rem;
+    color: #2D5A27; /* Verde da Logo */
+    margin-bottom: 20px;
+}
+
+.agendamento form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.agendamento input {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #88BCC9; /* Azul Claro da Logo */
+    background-color: #fff;
+    color: #333;
+    font-size: 1rem;
+    outline: none;
+}
+
+.agendamento input:focus {
+    border-color: #2D5A27; /* Muda para verde ao clicar */
+    box-shadow: 0 0 5px rgba(45, 90, 39, 0.3);
+}
+
+.agendamento button {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #2D5A27; /* Verde da Logo */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.agendamento button:hover {
+    background-color: #88BCC9; /* Azul Claro no Hover */
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    /* 1. Trava contra balanço lateral (Geral) */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        touch-action: pan-y; 
+    }
+
+    /* 2. Ajuste do Container de Agendamento */
+    .agendamento {
+        width: 100% !important; /* Ocupa a largura total */
+        max-width: 100% !important;
+        margin: 0 !important;   /* Cola nas bordas */
+        padding: 30px 20px !important; /* Espaço interno confortável */
+        box-sizing: border-box;
+        border-radius: 0;       /* Remove curvas laterais para parecer um banner */
+        border-top: 4px solid #2D5A27; /* Mantém o detalhe verde da logo */
+        height: auto !important;
+    }
+
+    /* 3. Título do Formulário */
+    .agendamento h2 {
+        font-size: 1.6rem !important; /* Tamanho nítido para mobile */
+        line-height: 1.2;
+        margin-bottom: 25px;
+        word-wrap: break-word;
+    }
+
+    /* 4. Ajuste dos Inputs e Botão */
+    .agendamento form {
+        width: 100%;
+        max-width: 100% !important;
+        gap: 15px;
+    }
+
+    .agendamento input {
+        width: 100%;
+        font-size: 1rem !important; /* Evita que o iPhone dê zoom automático ao clicar */
+        padding: 15px !important;
+        box-sizing: border-box;
+    }
+
+    .agendamento button {
+        width: 100%;
+        padding: 16px !important;
+        font-size: 1.2rem !important;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+}
+

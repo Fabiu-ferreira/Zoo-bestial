@@ -1,0 +1,27 @@
+---
+import Logo from "../components/Logo.astro"
+import "../css/Formulario.css"
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+</head>
+<body>
+
+  <Logo/>
+    
+<section class="agendamento">
+  <h2><em>Pegue seu ingresso!</em></h2>
+  <form action="/api/agendar" method="POST">
+    <input type="text" name="nome" placeholder="Seu nome" required>
+    <input type="email" name="email" placeholder="Seu e-mail" required>
+    <input type="tel" name="telefone" placeholder="Seu telefone" required>
+    <button type="submit">Enviar</button>
+  </form>
+</section>
+
+</body>
+</html>

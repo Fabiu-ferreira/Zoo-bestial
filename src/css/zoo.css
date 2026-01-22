@@ -1,0 +1,582 @@
+
+body {
+    margin: 0;
+    /* 2. Impede que a rolagem horizontal (eixo X) aconteça no nível principal */
+    overflow-x: hidden;  
+    font-family: 'Lora', serif; /* fonte principal do texto */
+    background-color: white;
+    color: #2F623F;
+}
+
+h1 {
+    font-family: 'Rye', serif; 
+    font-size: 64px;
+    letter-spacing: 2px;
+    color: #2F623F; 
+    text-shadow: 2px 2px #5a9e6a;
+}
+
+/* Subtítulos (caso use h2 ou h3 no futuro) */
+h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #234E2C;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Texto geral */
+.texto p {
+    font-size: 18px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+strong, em {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color: #2A6B3E;
+}
+
+
+
+/* Faixa verde com texto */
+.informacoes {
+    background-color: rgb(81, 138, 81);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0;
+}
+
+/*  Fundo da seção de texto ocupando 100% da tela */
+.texto {
+    width: 100%;
+    padding: 60px 20px;
+    text-align: center;
+    color: #2F623F;
+    position: relative;
+
+    /* 🔽 imagem de fundo em tela cheia */
+    background-image: url('/imagens-zoo/Pegada-de-leao.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /*dá leve efeito parallax */
+}
+
+/* 🔽 camada translúcida leve para leitura */
+.texto::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.6); /* fundo branco suave */
+    z-index: 0;
+}
+
+/* 🔽 conteúdo sempre acima da camada */
+.texto > * {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+/* Figura do rodapé */
+figure {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    margin: 0;
+    position: relative;
+}
+
+figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.figure{
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #0A0A0A;
+    color: #aaa;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+    margin: 0;
+}
+
+/* Container dos ícones sociais */
+.icones {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    gap: 20px;
+}
+
+/* Ícones */
+.icones a img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chamada {
+    /* GARANTE A LARGURA TOTAL (COBRE DA ESQUERDA À DIREITA) */
+    display: block; 
+    width: 100%; 
+    
+    font-family: 'Rye', cursive; 
+    font-weight: 400;
+    
+    /* ESTILOS DE DESTAQUE */
+    background-color: #2e2824; /* Cor de fundo */
+    color: #fff; /* Cor do texto */
+    padding: 15px 20px; /* Padding vertical e horizontal para dar 'ar' */
+    font-size: 1.5rem; /* Tamanho da fonte grande */
+    text-align: center; /* Centraliza o texto dentro da largura total */
+    
+    /* Garante que não haja margens indesejadas */
+    border-radius: 0;
+    margin: 0; 
+}
+/* Container principal */
+.Fundo-girafa {
+    position: relative;
+    width: 100%;
+    max-width: 100vw;
+    /* MUDANÇA AQUI: Altera a proporção para 21/7 (3:1), tornando-o mais alto que 21/6 (3.5:1) */
+    aspect-ratio: 21 / 7; 
+    overflow: hidden;
+    border-radius: 0; 
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+/* Imagem de fundo (Duas faces) */
+.Duas-faces img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+}
+
+/* Pele translúcida por cima */
+.pele-girafa {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.3;
+    z-index: 1;
+    border-radius: inherit; 
+}
+
+/* Botão Trapézio "Mapa-ZOO" */
+.btn-mapa-zoo {
+    /* Posicionamento */
+    position: absolute;
+    bottom: 220px; /* Alinha na parte inferior do .Fundo-girafa */
+    right: 46%; /* Afasta 5% da borda direita */
+   left: auto;
+    z-index: 5; /* Fica acima da imagem de pele (z-index: 1) */
+
+    /* Estilização */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    
+    /*  Estilo para o botão */
+    background-color: #FFA500; /* Laranja vibrante (pode mudar para o ocre) */
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    /* CRIAÇÃO DO TRAPÉZIO USANDO CLIP-PATH */
+    clip-path: polygon(
+        10% 0,    /* Canto Superior Esquerdo (10% afastado do canto) */
+        100% 0,   /* Canto Superior Direito (na borda) */
+        90% 100%, /* Canto Inferior Direito (90% afastado do canto) */
+        0 100%    /* Canto Inferior Esquerdo (na borda) */
+    );
+    
+    /* Sombra opcional */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    
+    /* Efeito ao passar o mouse */
+    transition: background-color 0.3s;
+}
+
+.btn-mapa-zoo:hover {
+    background-color: #FF8C00; /* Laranja mais escuro ao passar o mouse */
+}
+
+.Biomas{
+     display: block; 
+    width: 100%; 
+    
+    font-family: 'Rye', cursive; 
+    font-weight: 400;
+    
+    /* ESTILOS DE DESTAQUE */
+    background-color: #4FBDBA; /* Cor de fundo */
+    color: #fff; 
+    padding: 15px 20px; 
+    font-size: 1.5rem; 
+    text-align: center;
+   
+    border-radius: 0;
+    margin: 0; 
+}
+
+.Elefante {
+    position: relative;
+    
+    /* Adicione as dimensões desejadas para o contêiner */
+    width: 100%;
+    /* Exemplo: define uma altura ou usa aspect-ratio para controle */
+    max-width: 100vw;
+    aspect-ratio: 16 / 9; /* Exemplo de proporção para o banner do elefante */
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+/* ESTILO DA IMAGEM DENTRO DO CONTÊINER */
+.Elefante img {
+    /*Preenchimento o contêiner */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* BOTÃO BIOMAS (AGORA VAI PARA A BASE DO CONTÊINER .Elefante) */
+.btn-biomas{
+    /* Posicionamento */
+    position: absolute;
+    
+    /* 🌟 MANTÉM: Colado na borda inferior do elemento com position: relative (que é o .Elefante) */
+    bottom: 50%; 
+    
+    /* 🌟 MANTÉM: Início da centralização */
+    left: auto;
+    right: 70%;
+    
+    /* 🌟 ADICIONADO: Finaliza a centralização perfeita */
+    transform: translateX(-50%); 
+    
+    z-index: 5; 
+
+    /* Estilização */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    
+    /* ... o restante do estilo ... */
+
+    background-color: #FFA500;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    /* CRIAÇÃO DO TRAPÉZIO USANDO CLIP-PATH */
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s;
+}
+
+.btn-biomas:hover {
+    background-color: #4d4fd3;
+}
+
+.retangulo-apresentacao {
+  width: 100%;             /* ocupa toda a largura */
+  max-width: 100%;         /* remove limite de largura */
+  margin: 0;               /* sem margem nas laterais */
+  padding: 40px 20px;      /* mantém espaço interno */
+  box-sizing: border-box;  /* garante que padding não aumente a largura */
+  background-color: rgba(3, 118, 157, 0.2);
+  border-radius: 0;        /* opcional: sem cantos arredondados nas bordas da tela */
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  text-align: center;
+   
+  /* imagem de fundo */
+  background-image: url('/imagens-zoo/Pegada-de-leao.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* opcional: dá leve efeito parallax */
+}
+
+.foto-morangotango {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;          /* deixa a imagem circular */
+  object-fit: cover;           /* evita distorção */
+  border: 3px solid #fff;      /* borda branca */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;         /* espaço entre foto e texto */
+}
+
+.apresentacao-morangotango {
+  font-family: 'Permanent Marker', cursive;
+  color: #2F623F;                         
+  text-align: center;                    
+  font-size: 1.2rem;                       /* ajusta o tamanho */
+  line-height: 1.6;                        /* melhora a leitura */
+  max-width: 800px;                        /* largura máxima opcional */
+  margin: 0 auto;                          /* centraliza horizontalmente */
+}
+
+
+.video {
+  width: 100%;
+  max-width: 800px;
+  margin: 30px auto 0;
+  display: flex;
+  justify-content: center;
+}
+
+.video iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+}
+.frase-video{
+  color: #2F623F;     
+   font-family: 'Rye', cursive; 
+    font-weight: 400;  
+}
+
+/* Copyright */
+section.copyright {
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    background-color: #0A0A0A;
+    color: #aaa;
+    font-size: 0.9rem;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Ticket-float{
+    position: fixed; /* Fixa o elemento na tela */
+    width: 60px; /* Largura do botão */
+    height: 60px; /* Altura do botão */
+    bottom: 25px; /* Distância da parte inferior da tela */
+    right: 25px; /* Distância do canto direito da tela */
+    border-radius: 50px; 
+    text-align: center;
+    z-index: 999; 
+    transition: transform 0.3s ease;
+}
+
+/* CORREÇÃO 2: Remover o espaço na pseudo-classe :hover */
+.Ticket-float:hover {
+    transform: scale(1.1); /* Efeito ao passar o mouse */
+}
+
+
+
+/* Esta seção está correta para estilizar a imagem dentro do link */
+.Ticket-float img {
+    width: 100%;
+    height: 100%;
+    border-radius: 70%; /* Faz a imagem (o ícone) ser exibida em um círculo */
+    object-fit: cover;
+    display: block;
+}
+
+/* ============================================
+    RESPONSIVIDADE — CELULARES E TABLETS
+   ============================================ */
+@media (max-width: 1024px) {
+  /* Ajustes gerais */
+  body {
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  .texto {
+    padding: 40px 15px;
+    background-attachment: scroll; /* Evita bug de parallax em mobile */
+  }
+
+  .texto p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .retangulo-apresentacao {
+    padding: 20px 10px;
+    background-attachment: scroll;
+  }
+
+  .foto-morangotango {
+    width: 120px;
+    height: 120px;
+  }
+
+  .apresentacao-morangotango {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+
+  /* 🚀 ATUALIZAÇÃO: REMOVE O VÍDEO/GIF COMPLETAMENTE */
+  .video,
+  .frase-video{
+    display: none !important;
+  }
+
+  /* Faixas e banners */
+  .logo-banner {
+    height: 100px;
+  }
+
+  .logo-banner img {
+    height: 100px;
+  }
+
+  .informacoes {
+    flex-direction: column;
+    padding: 15px;
+    font-size: 0.95rem;
+  }
+
+  .Fundo-girafa {
+    aspect-ratio: 16 / 8; /* mais alto no celular */
+  }
+
+  .Elefante {
+    aspect-ratio: 16 / 10;
+  }
+
+  .btn-mapa-zoo,
+  .btn-biomas {
+    width: 120px;
+    height: 35px;
+    font-size: 0.8rem;
+    bottom: 20%;
+    right: 50%;
+    transform: translateX(50%);
+  }
+
+  /* Ícones sociais */
+  .icones {
+    gap: 12px;
+  }
+
+  .icones a img {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Ajuste do botão flutuante */
+  .Ticket-float {
+    width: 50px;
+    height: 50px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  /* Rodapé */
+  section.copyright {
+    font-size: 0.8rem;
+    padding: 10px;
+  }
+}
+
+/* ============================================
+    RESPONSIVIDADE — CELULARES PEQUENOS (< 600px)
+   ============================================ */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .foto-morangotango {
+    width: 100px;
+    height: 100px;
+  }
+
+  .apresentacao-morangotango {
+    font-size: 0.95rem;
+  }
+
+  .retangulo-apresentacao {
+    padding: 15px 8px;
+  }
+
+  .btn-mapa-zoo,
+  .btn-biomas {
+    width: 100px;
+    height: 30px;
+    font-size: 0.75rem;
+    bottom: 15%;
+  }
+
+  .icones a img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .informacoes {
+    font-size: 0.9rem;
+  }
+}
+
+/* ============================================
+    CORREÇÃO DE OVERFLOW SEM CORTAR TEXTO
+   ============================================ */
+
+/* Impede rolagem lateral global */
+html, body {
+  width: 100%;
+  overflow-x: hidden !important;
+}
+
+/* Garante medidas seguras */
+body * {
+  box-sizing: border-box;
+}
+
+/* Imagens respeitam o limite da tela */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Evita overflow em containers, mas sem afetar centralização */
+section, div, header, footer {
+  overflow-x: clip; 
+}
+
+/* 🔧 Restaura o alinhamento da foto do Morangotango */
+.foto-morangotango {
+  display: block;
+  margin: 0 auto 20px; 
+}
+

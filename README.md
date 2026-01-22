@@ -1,33 +1,46 @@
-# ZOO Bestial 🐾
+# Astro Starter Kit: Basics
 
-Projeto desenvolvido com **Astro** para divulgação e agendamento do evento **ZOO Bestial**.
+```sh
+npm create astro@latest -- --template basics
+```
 
-O site possui um formulário que envia um e-mail automático de confirmação
-utilizando **Nodemailer** e **Gmail (senha de app)**.
+> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
----
+## 🚀 Project Structure
 
-## 🚀 Tecnologias utilizadas
+Inside of your Astro project, you'll see the following folders and files:
 
-- Astro
-- Node.js
-- Nodemailer
-- HTML / CSS / JavaScript
+```text
+/
+├── public/
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   └── astro.svg
+│   ├── components
+│   │   └── Welcome.astro
+│   ├── layouts
+│   │   └── Layout.astro
+│   └── pages
+│       └── index.astro
+└── package.json
+```
 
----
+To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-## 📧 Funcionalidades
+## 🧞 Commands
 
-- Formulário de cadastro
-- Envio automático de e-mail de confirmação
-- Imagem de ingresso embutida no e-mail
-- API Route rodando no servidor
+All commands are run from the root of the project, from a terminal:
 
----
+| Command                   | Action                                           |
+| :------------------------ | :----------------------------------------------- |
+| `npm install`             | Installs dependencies                            |
+| `npm run dev`             | Starts local dev server at `localhost:4321`      |
+| `npm run build`           | Build your production site to `./dist/`          |
+| `npm run preview`         | Preview your build locally, before deploying     |
+| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
+| `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## ⚙️ Como rodar o projeto localmente
+## 👀 Want to learn more?
 
-1. Clone o repositório
-2. Instale as dependências:
-   ```bash
-   npm install
+Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).

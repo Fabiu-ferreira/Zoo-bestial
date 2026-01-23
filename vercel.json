@@ -1,1 +1,7 @@
-{ "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
+  "rewrites": [
+    {
+      "source": "/((?!api|_astro|assets|favicon.ico).*)",
+      "destination": "/"
+    }
+  ]
+}

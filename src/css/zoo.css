@@ -409,14 +409,15 @@ section.copyright {
     RESPONSIVIDADE — CELULARES E TABLETS
    ============================================ */
 @media (max-width: 1024px) {
+
   /* Ajustes gerais */
   body {
-    font-size: 16px;
+    font-size: 17.5px; /* 🔧 mantém identidade da fonte */
     overflow-x: hidden;
   }
 
   h1 {
-    font-size: 48px;
+    font-size: 56px; /* 🔧 reduz sem “trocar a fonte” */
   }
 
   .texto {
@@ -425,7 +426,7 @@ section.copyright {
   }
 
   .texto p {
-    font-size: 1rem;
+    font-size: 1.05rem; /* 🔧 leitura consistente */
     line-height: 1.6;
   }
 
@@ -440,13 +441,13 @@ section.copyright {
   }
 
   .apresentacao-morangotango {
-    font-size: 1rem;
+    font-size: 1.05rem; /* 🔧 evita sensação de fonte diferente */
     padding: 0 10px;
   }
 
-  /* 🚀 ATUALIZAÇÃO: REMOVE O VÍDEO/GIF COMPLETAMENTE */
+  /* 🚀 REMOVE VÍDEO/GIF EM TELAS MENORES */
   .video,
-  .frase-video{
+  .frase-video {
     display: none !important;
   }
 
@@ -462,11 +463,11 @@ section.copyright {
   .informacoes {
     flex-direction: column;
     padding: 15px;
-    font-size: 0.95rem;
+    font-size: 1rem; /* 🔧 mantém proporção */
   }
 
   .Fundo-girafa {
-    aspect-ratio: 16 / 8; /* mais alto no celular */
+    aspect-ratio: 16 / 8;
   }
 
   .Elefante {
@@ -477,7 +478,7 @@ section.copyright {
   .btn-biomas {
     width: 120px;
     height: 35px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     bottom: 20%;
     right: 50%;
     transform: translateX(50%);
@@ -493,7 +494,7 @@ section.copyright {
     height: 40px;
   }
 
-  /* Ajuste do botão flutuante */
+  /* Botão flutuante */
   .Ticket-float {
     width: 50px;
     height: 50px;
@@ -503,7 +504,7 @@ section.copyright {
 
   /* Rodapé */
   section.copyright {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     padding: 10px;
   }
 }
@@ -512,8 +513,18 @@ section.copyright {
     RESPONSIVIDADE — CELULARES PEQUENOS (< 600px)
    ============================================ */
 @media (max-width: 600px) {
+
+  body {
+    font-size: 17px; /* 🔧 ainda consistente */
+  }
+
   h1 {
-    font-size: 36px;
+    font-size: 42px;
+  }
+
+  .texto p {
+    font-size: 1rem;
+    line-height: 1.6;
   }
 
   .foto-morangotango {
@@ -522,7 +533,7 @@ section.copyright {
   }
 
   .apresentacao-morangotango {
-    font-size: 0.95rem;
+    font-size: 1rem;
   }
 
   .retangulo-apresentacao {
@@ -533,7 +544,7 @@ section.copyright {
   .btn-biomas {
     width: 100px;
     height: 30px;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     bottom: 15%;
   }
 
@@ -543,7 +554,7 @@ section.copyright {
   }
 
   .informacoes {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 }
 
@@ -569,14 +580,14 @@ img {
   display: block;
 }
 
-/* Evita overflow em containers, mas sem afetar centralização */
+/* Evita overflow lateral sem quebrar layout */
 section, div, header, footer {
-  overflow-x: clip; 
+  overflow-x: clip;
 }
 
-/* 🔧 Restaura o alinhamento da foto do Morangotango */
+/* Centraliza corretamente a foto do Morangotango */
 .foto-morangotango {
   display: block;
-  margin: 0 auto 20px; 
+  margin: 0 auto 20px;
 }
 
